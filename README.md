@@ -1,7 +1,7 @@
 # 📊 Sales Forecasting using LSTM with Feature Impact Analysis.
 
 ## 🚀 Overview
-This project focuses on forecasting retail sales using Deep Learning (LSTM) and analyzing model behavior under different feature configurations.
+This project demonstrates that feature selection has a greater impact on model performance than model complexity. LSTM is effective for capturing temporal patterns but requires domain-specific features for real-world accuracy.
 
 Instead of only building a model, this project explores:
 - How LSTM performs on time-series data
@@ -81,7 +81,7 @@ This project evaluates model behavior under different feature conditions:
 | Linear Regression (Baseline)   | 2375 |
 | LSTM (Time-Series Only)        | 2122 |
 
-👉 LSTM improved performance over baseline when modeling temporal patterns, but still struggles with high volatility in sales data.
+👉 LSTM outperformed baseline when using time-series features, but overall performance highlights trade-off between simplicity and real-world feature complexity.
 
 ---
 
