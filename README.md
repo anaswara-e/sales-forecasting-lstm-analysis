@@ -18,12 +18,19 @@ Predict daily sales using historical data and evaluate whether:
 ---
 
 ## 📂 Dataset
+
+The dataset is not included in this repository due to size constraints.
+
+You can download it from the Rossmann Store Sales dataset on Kaggle:
+https://www.kaggle.com/competitions/rossmann-store-sales/data
+
+**Dataset Details:**
 - ~800K+ records of retail store sales  
-- Features include:
+- Key features:
   - Date (Day, Month, Weekday)
   - Sales
   - Promo
-  - Customers  
+  - Customers 
 
 ---
 
