@@ -1,4 +1,4 @@
-# 📊 Sales Forecasting using LSTM with Feature Impact Analysis
+# 📊 Sales Forecasting using LSTM with Feature Impact Analysis.
 
 ## 🚀 Overview
 This project focuses on forecasting retail sales using Deep Learning (LSTM) and analyzing model behavior under different feature configurations.
