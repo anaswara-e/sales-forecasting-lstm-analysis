@@ -81,7 +81,7 @@ This project evaluates model behavior under different feature conditions:
 | Linear Regression (Baseline)   | 2375 |
 | LSTM (Time-Series Only)        | 2122 |
 
-👉 LSTM outperformed baseline when using time-series features, but overall performance highlights trade-off between simplicity and real-world feature complexity.
+👉 LSTM outperformed baseline when using time-series features, but overall performance highlights trade-off between simplicity and real-world feature complexity
 
 ---
 
