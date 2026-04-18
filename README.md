@@ -125,12 +125,12 @@ This project evaluates model behavior under different feature conditions:
 ---
 
 ## 📁 Repository Structure
-lstm_analysis.ipynb
-lstm_model.keras
-Prediction Plot.png
-Loss Curve Plot.png
-requirements.txt
-README.md
+- lstm_analysis.ipynb
+- lstm_model.keras
+- Prediction Plot.png
+- Loss Curve Plot.png
+- requirements.txt
+- README.md
 
 ---
 
