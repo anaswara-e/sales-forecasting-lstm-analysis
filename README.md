@@ -76,10 +76,12 @@ This project evaluates model behavior under different feature conditions:
 
 ## 📊 Results
 
-| Model                        | RMSE  |
-|----------------------------|-------|
-| Linear Regression (Baseline) | 2375 |
-| LSTM (Time-Series Based)     | 2122 |
+| Model                          | RMSE |
+|--------------------------------|------|
+| Linear Regression (Baseline)   | 2375 |
+| LSTM (Time-Series Only)        | 2122 |
+
+👉 LSTM improved performance over baseline when modeling temporal patterns, but still struggles with high volatility in sales data.
 
 ---
 
