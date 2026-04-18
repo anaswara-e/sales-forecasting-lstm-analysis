@@ -1,87 +1,85 @@
 # 📊 Sales Forecasting using LSTM with Feature Impact Analysis
 
 ## 🚀 Overview
-This project focuses on forecasting retail sales using Deep Learning (LSTM) and analyzing how **feature selection impacts model performance**.
+This project focuses on forecasting retail sales using Deep Learning (LSTM) and analyzing model behavior under different feature configurations.
 
 Instead of only building a model, this project explores:
-- When LSTM works well
-- When traditional models perform better
-- How business features affect predictions
+- How LSTM performs on time-series data
+- Impact of feature selection on prediction accuracy
+- Comparison with a simple baseline model
 
 ---
 
 ## 🎯 Problem Statement
-Predict daily sales using historical data and evaluate whether:
-- Temporal patterns alone are sufficient, or
-- External business features (e.g., promotions, customers) improve performance
+Predict daily retail sales using historical data and evaluate:
+
+- Whether temporal patterns alone are sufficient for prediction
+- How external business factors (e.g., promotions, customers) influence performance
+- Whether deep learning models outperform traditional approaches
 
 ---
 
 ## 📂 Dataset
-
 The dataset is not included in this repository due to size constraints.
 
-You can download it from the Rossmann Store Sales dataset on Kaggle:
+You can download it from:
 https://www.kaggle.com/competitions/rossmann-store-sales/data
 
-**Dataset Details:**
-- ~800K+ records of retail store sales  
-- Key features:
+### Dataset includes:
+- ~800K+ retail store records
+- Features:
   - Date (Day, Month, Weekday)
   - Sales
   - Promo
-  - Customers 
+  - Customers
 
 ---
 
 ## ⚙️ Approach
 
 ### 1. Data Preprocessing
-- Converted date to datetime format  
-- Removed closed stores and zero sales  
-- Handled outliers using quantile filtering  
+- Converted date column to datetime format  
+- Removed closed stores and invalid sales values  
+- Handled outliers using quantile-based filtering  
 - Feature engineering:
-  - Day, Month, Weekday  
+  - Day, Month, Weekday extracted from Date  
 
 ---
 
 ### 2. Time-Series Preparation
-- Normalized features using MinMaxScaler  
-- Created sequences of past observations  
-- Sequence length: **30 days**
+- Scaled features using MinMaxScaler  
+- Created sequential input data for LSTM  
+- Sequence length: 30 time steps  
 
 ---
 
 ### 3. Model Building (LSTM)
-- Two-layer LSTM architecture  
-- Dropout used to reduce overfitting  
-- Trained using Mean Squared Error loss  
+- Built a stacked LSTM architecture using TensorFlow/Keras  
+- Used Dropout to reduce overfitting  
+- Loss function: Mean Squared Error (MSE)  
+- Optimizer: Adam  
 
 ---
 
-### 4. Experiment: Feature Impact Analysis
-
-Two setups were tested:
-
-#### 🔹 Model A: Full Features
-- Sales + Promo + Customers + Date features  
-
-#### 🔹 Model B: Time-Series Only
-- Sales + Date features only  
+### 4. Baseline Model
+- Linear Regression model used as a baseline for comparison  
 
 ---
 
-### 5. Baseline Model
-- Linear Regression used as baseline for comparison  
+### 5. Experiment Setup
+This project evaluates model behavior under different feature conditions:
+
+- Full feature set (Sales + Promo + Customers + Date features)
+- Reduced feature set (Time-series patterns only)
 
 ---
 
 ## 📊 Results
 
-| Model                          | RMSE |
-|--------------------------------|------|
-| Linear Regression (Baseline)   | 2375 |
-| LSTM (Time-Series Only)        | 2122 |
+| Model                        | RMSE  |
+|----------------------------|-------|
+| Linear Regression (Baseline) | 2375 |
+| LSTM (Time-Series Based)     | 2122 |
 
 ---
 
@@ -89,29 +87,28 @@ Two setups were tested:
 
 ### 🔹 Actual vs Predicted Sales
 - LSTM captures overall trends and seasonality  
-- Struggles with extreme spikes  
+- Struggles with sudden spikes in sales  
 
 ### 🔹 Training vs Validation Loss
-- Stable curves indicate no severe overfitting  
-- Slight underfitting observed  
+- Stable convergence observed  
+- Slight underfitting indicates model limitations  
 
 ---
 
 ## 🧠 Key Insights
 
-- LSTM performs better when modeling **pure temporal patterns**
-- Removing business features reduces ability to capture real-world variability  
-- External factors (Promo, Customers) play a critical role in prediction  
-- Model performance depends heavily on **feature selection**, not just model choice  
+- LSTM performs better when learning temporal patterns  
+- Removing external features improves sequence learning but reduces real-world accuracy  
+- Business variables like promotions and customer count significantly impact predictions  
+- Feature engineering plays a critical role in model performance  
 
 ---
 
 ## ⚠️ Observations
 
-- LSTM predictions are smoother and miss sharp spikes  
-- Indicates difficulty in capturing high variability  
-- Suggests that:
-  - Tree-based models may perform better for structured tabular data  
+- Predictions are smoother than actual values  
+- Model struggles to capture high volatility in sales  
+- Indicates potential suitability of tree-based models for structured tabular data  
 
 ---
 
@@ -125,40 +122,41 @@ Two setups were tested:
 
 ---
 
-## 📁 Project Structure
-├── notebook/
-│ └── lstm_analysis.ipynb
-├── model/
-│ └── lstm_model.keras
-├── images/
-│ ├── prediction_plot.png
-│ └── loss_plot.png
+## 📁 Repository Structure
+├── lstm_analysis.ipynb
+├── lstm_model.keras
+├── Prediction Plot.png
+├── Loss Curve Plot.png
+├── requirements.txt
 ├── README.md
+
+---
 
 
 ---
 
 ## 🚀 Future Improvements
 
-- Try tree-based models (Random Forest, XGBoost) for comparison  
-- Hyperparameter tuning for LSTM  
-- Incorporate more business features  
-- Use advanced architectures (GRU, Attention)  
+- Compare with Random Forest and XGBoost models  
+- Improve LSTM architecture (GRU, Attention mechanisms)  
+- Feature selection optimization  
+- Hyperparameter tuning for better generalization  
 
 ---
 
 ## 💡 Conclusion
 
 This project demonstrates that:
-> Choosing the right features is as important as choosing the right model.
 
-While LSTM is powerful for time-series data, combining **temporal patterns with domain-specific features** is essential for accurate predictions.
+> Model performance in real-world problems depends heavily on feature selection, not just model complexity.
+
+LSTM effectively captures temporal patterns, but external business features are crucial for accurate sales forecasting.
 
 ---
 
 ## 🔗 Author
 
-**Anaswara E**  
+**Anaswara E**
+
 - LinkedIn: https://www.linkedin.com/in/anaswara-e  
 - GitHub: https://github.com/anaswara-e  
-
